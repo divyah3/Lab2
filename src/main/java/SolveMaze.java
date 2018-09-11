@@ -36,6 +36,25 @@ public class SolveMaze {
         for (int step = 0; step < 900; step++) {
             // Implement your maze solving algorithm here
             while (maze.isFinished() == false) {
+                int randomTurn = (int) (Math.random() * 2);
+                if (randomTurn == 0) {
+                    maze.turnRight();
+                    System.out.println(randomTurn);
+
+                } else {
+                    maze.turnLeft();
+                    System.out.println(randomTurn);
+
+                }
+                maze.move();
+            }
+            /**
+             * Basic wall maze algorithm
+             */
+
+            /*
+            System.out.println(randomTurn);
+            while (maze.isFinished() == false) {
                 maze.turnLeft();
                 while (maze.canMove() == false) {
                     maze.turnRight();
@@ -43,12 +62,13 @@ public class SolveMaze {
                 maze.move();
             }
 
+        }*/
         }
-
-        if (maze.isFinished()) {
-            System.out.println("You solved the maze!");
-        } else {
-            System.out.println("Try again!");
+            if (maze.isFinished()) {
+                System.out.println("You solved the maze!");
+            } else {
+                System.out.println("Try again!");
+            }
         }
     }
-}
+
